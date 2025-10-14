@@ -1,0 +1,9 @@
+HHP_AUW_2500 Data Extraction and Usage in Original Code:
+Ddata1 has Time (s), Vx (kts), Vz (up +ve) (fpm), Altitude (ft, MSL) from the GPS sheet in that order.
+Pdata1 has Time (s), Pitch Angle (deg), Torque (%), Omega (%), tht0 (%) from the PCM sheet in that order.
+
+In the mainTM2 file in Downloads\NewHVCodes-280825\TM folder, PCM data (pdata) is first interp'd to GPS Time. (Line 14)
+Then, tht0 and thtP are converted to rad, omg to rad/s. (Line 17-19). This is now in data2.
+data3 is created by adding the last 4 columns of ddata (GPS data). Then, Vz is converted into sink rate. (Lines 21-22)
+
+1. One error in their code (main_xls) is that EV and TD should have 1 added. (Nope, because starting time is 0.1 s)
